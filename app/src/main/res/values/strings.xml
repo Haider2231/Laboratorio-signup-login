@@ -15,4 +15,10 @@
     <string name="btn_login">Iniciar sesión</string>
     <string name="btn_go_login">Ya tengo cuenta (Login)</string>
     <string name="btn_go_register">Registrarme</string>
+    <string name="hint_address">Dirección (Google Maps)</string>
+    <string name="hint_lat">Latitud</string>
+    <string name="hint_lng">Longitud</string>
+    <string name="hint_dob">Fecha de nacimiento</string>
+    <string name="btn_get_location">Obtener mi ubicación</string>
+    <string name="label_role">Rol</string>
 </resources>
