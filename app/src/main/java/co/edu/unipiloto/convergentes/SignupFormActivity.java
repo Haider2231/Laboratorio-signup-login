@@ -61,10 +61,9 @@ public class SignupFormActivity extends AppCompatActivity {
         etDob = findViewById(R.id.etDob);
         etAddress = findViewById(R.id.etAddress);
 
-        tilAddress = findViewById(R.id.tilAddress);
+
         etLat = findViewById(R.id.etLat);
         etLng = findViewById(R.id.etLng);
-
         rgGender = findViewById(R.id.rgGender);
         spRole = findViewById(R.id.spRole);
 
@@ -79,7 +78,7 @@ public class SignupFormActivity extends AppCompatActivity {
         MaterialButton btnRegister = findViewById(R.id.btnRegister);
         MaterialButton btnGoLogin = findViewById(R.id.btnGoLoginFromSignup);
         MaterialButton btnGetLocation = findViewById(R.id.btnGetLocation);
-        tilAddress.setEndIconOnClickListener(v -> geocodeAddress());
+
         // DatePicker (solo fechas pasadas)
         CalendarConstraints constraints = new CalendarConstraints.Builder()
                 .setValidator(DateValidatorPointBackward.now())
@@ -136,39 +135,6 @@ public class SignupFormActivity extends AppCompatActivity {
                 Toast.makeText(this, "Permiso de ubicación denegado", Toast.LENGTH_SHORT).show();
             }
         }
-    }
-
-    private void geocodeAddress() {
-        String addr = safe(etAddress);
-        if (TextUtils.isEmpty(addr)) {
-            etAddress.setError("Ingrese una dirección");
-            return;
-        }
-        if (!Geocoder.isPresent()) {
-            Toast.makeText(this, "Geocoder no disponible en este dispositivo", Toast.LENGTH_SHORT).show();
-            return;
-        }
-        Executors.newSingleThreadExecutor().execute(() -> {
-            try {
-                Geocoder geocoder = new Geocoder(this, Locale.getDefault());
-                List<Address> res = geocoder.getFromLocationName(addr, 1);
-                runOnUiThread(() -> {
-                    if (res != null && !res.isEmpty()) {
-                        Address a = res.get(0);
-                        etLat.setText(String.valueOf(a.getLatitude()));
-                        etLng.setText(String.valueOf(a.getLongitude()));
-                        etAddress.setError(null);
-                        Toast.makeText(this, "Coordenadas obtenidas", Toast.LENGTH_SHORT).show();
-                    } else {
-                        etAddress.setError("No se encontró esa dirección");
-                    }
-                });
-            } catch (IOException e) {
-                runOnUiThread(() ->
-                        Toast.makeText(this, "Error geocodificando: " + e.getMessage(), Toast.LENGTH_SHORT).show()
-                );
-            }
-        });
     }
 
     private void reverseGeocode(double lat, double lng) {
@@ -235,7 +201,13 @@ public class SignupFormActivity extends AppCompatActivity {
             Toast.makeText(this, "Complete dirección (texto) o lat/lng", Toast.LENGTH_SHORT).show();
             return;
         }
+        if (!hasLatLng) {
+            Toast.makeText(this, "Pulsa 'Obtener mi ubicación' para completar lat/lng", Toast.LENGTH_SHORT).show();
+            return;
+        }
         etAddress.setError(null);
+
+
 
         // Género
         int checked = rgGender.getCheckedRadioButtonId();
