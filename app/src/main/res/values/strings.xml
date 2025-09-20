@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Laboratorio: Signup &amp; Login</string>
+    <string name="title_signup">Registro</string>
+    <string name="title_login">Login</string>
+    <string name="hint_fullname">Nombre completo</string>
+    <string name="hint_email">Email</string>
+    <string name="hint_password">Contraseña</string>
+    <string name="hint_username">Nombre de usuario</string>
+    <string name="hint_confirm_password">Confirmar contraseña</string>
+    <string name="label_gender">Género</string>
+    <string name="male">Masculino</string>
+    <string name="female">Femenino</string>
+    <string name="btn_register">Registrar</string>
+    <string name="btn_login">Iniciar sesión</string>
+    <string name="btn_go_login">Ya tengo cuenta (Login)</string>
+    <string name="btn_go_register">Registrarme</string>
+</resources>

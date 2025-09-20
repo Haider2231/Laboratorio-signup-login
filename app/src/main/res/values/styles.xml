@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Widget.My.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <!-- Sin boxBackgroundMode aquí -->
+        <item name="boxStrokeColor">@color/outline</item>
+        <item name="hintTextColor">@color/text_hint</item>
+    </style>
+</resources>

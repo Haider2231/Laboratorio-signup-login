@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material3 sin Dynamic Color -->
+    <style name="Theme.Convergentes" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Paleta clara -->
+        <item name="colorPrimary">@color/orange_600</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
+        <item name="colorSecondary">@color/orange_600</item>
+        <item name="colorSurface">@color/surface_bg</item>
+        <item name="colorOnSurface">@color/text_primary</item>
+        <item name="colorOutline">@color/outline</item>
+
+        <!-- Barras del sistema -->
+        <item name="android:statusBarColor">@color/orange_700</item>
+        <item name="android:navigationBarColor">@color/surface_bg</item>
+
+        <!-- Estilo global para TextInputLayout (definido en styles.xml) -->
+        <item name="textInputStyle">@style/Widget.My.TextInputLayout</item>
+
+        <!-- Controles activos (Radio/Check/Toggle) en naranja -->
+        <item name="colorControlActivated">@color/orange_600</item>
+    </style>
+</resources>

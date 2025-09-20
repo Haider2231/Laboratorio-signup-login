@@ -1,0 +1,14 @@
+<resources>
+    <!-- NARANJAS -->
+    <color name="orange_600">#FF6A00</color>   <!-- Botón principal -->
+    <color name="orange_700">#E65F00</color>   <!-- Sombra/pressed -->
+
+    <!-- SUPERFICIES / TEXTO -->
+    <color name="surface_bg">#FAFAFA</color>   <!-- Fondo claro -->
+    <color name="onPrimary">#FFFFFF</color>    <!-- Texto sobre naranja -->
+    <color name="text_primary">#424242</color> <!-- Títulos -->
+    <color name="text_hint">#9E9E9E</color>    <!-- Hints -->
+
+    <!-- BORDES / LÍNEAS -->
+    <color name="outline">#BDBDBD</color>      <!-- Línea gris inputs -->
+</resources>
